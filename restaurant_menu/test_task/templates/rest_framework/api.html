@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Список блюд</title>
+</head>
+<body>
+    <h1>Список</h1>
+
+    {% for category in categories %}
+        <h2>{{ category.name_ru }}</h2>
+    {% endfor %}
+</body>
+</html>
