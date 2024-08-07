@@ -4,10 +4,17 @@
     <title>Список блюд</title>
 </head>
 <body>
-    <h1>Список</h1>
-
-    {% for category in categories %}
-        <h2>{{ category.name_ru }}</h2>
+    <h1>Список блюд</h1>
+<ul>
+    {% for c in categories %}
+    <li>
+        <h2>{{ c.name_ru }}</h2>
+        <p>{{ c.description_ru }}</p>
+        <p>{{ c.cost }}</p>
+        <hr>
+    </li>
     {% endfor %}
+</ul>
+
 </body>
 </html>

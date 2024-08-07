@@ -1,13 +1,12 @@
 from django.shortcuts import render
 from rest_framework.views import APIView
-from .models import FoodListSerializer, Food
+from .models import Food, FoodSerializer
 
 
 class FoodListAPIView(APIView):
     def get(self, request):
-        categories = Food.objects.filter(is_publish=False).distinct()
-
-        serializer = FoodListSerializer(categories, many=True)
+        categories = Food.objects.filter(is_publish=True).distinct()
+        serializer = FoodSerializer(categories, many=True)
 
         return render(
             request,
